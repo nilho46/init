@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ambil initData Telegram</title>
+  <meta charset="UTF-8">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    textarea {
+      width: 90%;
+      height: 100px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔐 Telegram initData</h2>
+  <p>Tekan tombol untuk melihat `initData` kamu.</p>
+  <textarea id="output" readonly>Tekan tombol di bawah ini</textarea>
+  <br>
+  <button onclick="ambilInitData()">Dapatkan initData</button>
+
+  <script>
+    function ambilInitData() {
+      const initData = Telegram.WebApp.initData;
+      document.getElementById('output').value = initData ? `tma ${initData}` : "initData tidak tersedia.";
+    }
+  </script>
+</body>
+</html>
